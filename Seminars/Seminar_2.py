@@ -126,8 +126,8 @@ def Zadacha0():
 #         if j % i == 0:
 #             count+=1
 #     print(count)
-#     if count == 10:
-#         list.append(j)
+# if count == 10:
+#     list.append(j)
 # print(list)
 
 def check_number(n):
@@ -146,11 +146,12 @@ def find_numbers():
     return numbers
 
 
-def main():
-    print(find_numbers.__doc__)
-    print(check_number.__doc__)
+# def main():
+#     print(find_numbers.__doc__)
+#     print(check_number.__doc__)
     print(*find_numbers())
 
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()
+print(*find_numbers())
