@@ -25,14 +25,14 @@ print(numbers)
 
 # По умолчанию open открывает файл для чтения, поэтому вылезет ошибка, т.к. файла random.txt пока не существует.
 # Доп. параметр 'w' открывает файл для записи, поэтому создает его, если его пока нет, даже если просто написать data = open('random.txt', 'w')
-data = open('random.txt', 'w')
-data.writelines(str(numbers)) # Обязательно переводить данные в строку. writelines принимает только строки
-data.close()
+# data = open('random.txt', 'w')
+# data.writelines(str(numbers)) # Обязательно переводить данные в строку. writelines принимает только строки
+# data.close()
 
 # Другой способ покороче
 
-with open('random.txt', 'a') as data:
-    data.writelines(str(numbers) + '\n') # Обязательно переводить данные в строку. writelines принимает только строки.
+# with open('random.txt', 'a') as data:
+#     data.writelines(str(numbers) + '\n') # Обязательно переводить данные в строку. writelines принимает только строки.
                                            # \n позволяет печатать каждую строку с новой строки.
 # Закрывать файл не надо
 
@@ -40,22 +40,22 @@ with open('random.txt', 'a') as data:
 
 # Задача 1. Создайте кортеж, заполненный случайными числами. Напишите метод, который заменяет элемент в кортеже по заданному индексу.
 
-import random
+# import random
 
-def Change_Index(numbers, index):
-    numbers = list(numbers) # Переводим кортеж в список. В списке менять элементы можно
-    numbers[index] = random.randint(10, 100)
-    numbers = tuple(numbers)
-    return numbers
+# def Change_Index(numbers, index):
+#     numbers = list(numbers) # Переводим кортеж в список. В списке менять элементы можно
+#     numbers[index] = random.randint(10, 100)
+#     numbers = tuple(numbers)
+#     return numbers
 
-size = random.randint(5, 12) # Задаем рандомно размер кортежа
-numbers = tuple(random.randint(10, 100) for i in range(size)) # Задаем кортеж
+# size = random.randint(5, 12) # Задаем рандомно размер кортежа
+# numbers = tuple(random.randint(10, 100) for i in range(size)) # Задаем кортеж
 
-print(numbers)
+# print(numbers)
 
-index = int(input('Введите номер индекса для замены: '))
+# index = int(input('Введите номер индекса для замены: '))
 
-print(Change_Index(numbers, index))
+# print(Change_Index(numbers, index))
 
 
 # --------------------------------------------------------------------------------------------------------------------------------
@@ -73,29 +73,29 @@ print(Change_Index(numbers, index))
 # РЕШЕНИЕ, ЕСЛИ В ФАЙЛАХ ДАННЫЕ ЗАПИСАНЫ В НЕСКОЛЬКО СТРОК. READLINES СЧИТЫВАЕТ НЕСКОЛЬКО СТРОК
 
 
-handsome = set()
-smart = set()
-strong = set()
+# handsome = set()
+# smart = set()
+# strong = set()
 
-with open('handsome.txt', encoding='utf-8') as inf:
-    for line in inf.readlines():
-        handsome.add(line.rstrip())
-print(handsome)
+# with open('handsome.txt', encoding='utf-8') as inf:
+#     for line in inf.readlines():
+#         handsome.add(line.rstrip())
+# print(handsome)
 
-with open('smart.txt', encoding='utf-8') as inf:
-    for line in inf.readlines():
-        smart.add(line.rstrip())
-print(smart)
+# with open('smart.txt', encoding='utf-8') as inf:
+#     for line in inf.readlines():
+#         smart.add(line.rstrip())
+# print(smart)
 
-with open('strong.txt', encoding='utf-8') as inf:
-    for line in inf.readlines():
-        strong.add(line.rstrip())
-print(strong)
+# with open('strong.txt', encoding='utf-8') as inf:
+#     for line in inf.readlines():
+#         strong.add(line.rstrip())
+# print(strong)
 
 # print(*(handsome & smart & strong), sep='\n')
 
-for el in handsome & smart & strong:
-    print(el)
+# for el in handsome & smart & strong:
+#     print(el)
 
 # РЕШЕНИЕ, ЕСЛИ В ФАЙЛАХ ДАННЫЕ ЗАПИСАНЫ В ОДНУ СТРОКУ
 
@@ -119,22 +119,22 @@ for el in handsome & smart & strong:
 
 # РЕШЕНИЕ ДЕНИСА
 
-def Open_File(nameFile):
-    f = open(nameFile, encoding='utf-8')
-    phrase = f.readlines()
-    f.close()
-    list = phrase[0].split() # Берем первую строку файла и разбиваем ее на состовляющие через пробел. В этом файле строка единственная
-    return set(list)
+# def Open_File(nameFile):
+#     f = open(nameFile, encoding='utf-8')
+#     phrase = f.readlines()
+#     f.close()
+#     list = phrase[0].split() # Берем первую строку файла и разбиваем ее на состовляющие через пробел. В этом файле строка единственная
+#     return set(list)
 
-handsome = Open_File('handsome.txt')
-smart = Open_File('smart.txt')
-strong = Open_File('strong.txt')
+# handsome = Open_File('handsome.txt')
+# smart = Open_File('smart.txt')
+# strong = Open_File('strong.txt')
 
-print(handsome)
-print(smart)
-print(strong)
+# print(handsome)
+# print(smart)
+# print(strong)
 
-print(handsome.intersection(smart).intersection(strong))
+# print(handsome.intersection(smart).intersection(strong))
 
 
 
@@ -145,19 +145,19 @@ print(handsome.intersection(smart).intersection(strong))
 
 # [1, 2, 9, 5, 2, 18, 3, 5, 13, 2] -> [1, 2, 9, 5, 18, 3, 13]
 
-import random
+# import random
 
 
-numbers = [random.randint(1, 20) for i in range(10)]
-print(numbers)
+# numbers = [random.randint(1, 20) for i in range(10)]
+# print(numbers)
 
-numbers = set(numbers) # При переводе в set() список автоматически убирает дублирующиеся элементы и сортирует их по возрастанию.
+# numbers = set(numbers) # При переводе в set() список автоматически убирает дублирующиеся элементы и сортирует их по возрастанию.
 
-print(numbers)
+# print(numbers)
 
 # -----------------------------------------------------------------
 
-print(list(set(list(random.randint(1, 20) for _ in range(10))))) # Решение в одну строку
+# print(list(set(list(random.randint(1, 20) for _ in range(10))))) # Решение в одну строку
 
 
 # -----------------------------------------------------------------------------------------------------------------------------------------
@@ -165,9 +165,9 @@ print(list(set(list(random.randint(1, 20) for _ in range(10))))) # Решени�
 
 # Задача 4. Дано число N. Найдите площадь круга с радиусом N. Ответ округлите до сотых.
 
-import math
+# import math
 
-radius = int(input('Введите число: '))
+# radius = int(input('Введите число: '))
 
-print(round(math.pi * math.pow(radius, 2), 2))
+# print(round(math.pi * math.pow(radius, 2), 2))
 # pow - возведение в степень(после radius указывается степень), цифра после round указывает количество знаков после запятой для округления
