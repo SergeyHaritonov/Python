@@ -24,59 +24,59 @@ Multipliers()
 # Закончилось: «Бурёнка»
 
 
-def Open_File(nameFile, i):
-    f = open(nameFile, encoding='utf-8')
-    phrase = f.readlines()
-    f.close()
-    phrase = [i.strip() for i in phrase]
-    list = phrase[i].split(', ')
-    return set(list)
+# def Open_File(nameFile, i):
+#     f = open(nameFile, encoding='utf-8')
+#     phrase = f.readlines()
+#     f.close()
+#     phrase = [i.strip() for i in phrase]
+#     list = phrase[i].split(', ')
+#     return set(list)
 
-assortment = Open_File('Icecream.txt', 0)
-in_stock = Open_File('Icecream.txt', 1)
+# assortment = Open_File('Icecream.txt', 0)
+# in_stock = Open_File('Icecream.txt', 1)
 
-print(*list(assortment), sep=', ')
-print(*list(in_stock), sep=', ')
+# print(*list(assortment), sep=', ')
+# print(*list(in_stock), sep=', ')
 
-diff = assortment.difference(in_stock)
+# diff = assortment.difference(in_stock)
 
-print(f'Закончилось: ', *list(diff))
-
-
-
-# Задача 3. Выведите число π с заданной точностью. Точность вводится пользователем в виде натурального числа. 
-# 3 -> 3.142    5 -> 3.14159
-
-import math
-
-print(round(math.pi, int(input('Введите число знаков после запятой: '))))
+# print(f'Закончилось: ', *list(diff))
 
 
 
-# Задача 4*. Даны два файла, в каждом из которых находится запись многочлена. Найдите сумму данных многочленов.
-# 1. 5x^2 + 3x  2. 3x^2 + x + 8 Результат: 8x^2 + 4x + 8
+# # Задача 3. Выведите число π с заданной точностью. Точность вводится пользователем в виде натурального числа. 
+# # 3 -> 3.142    5 -> 3.14159
+
+# import math
+
+# print(round(math.pi, int(input('Введите число знаков после запятой: '))))
 
 
-# Эту задачу своей головой не осилил. Нашел в инернете, что можно через бибилиотеку решить
+
+# # Задача 4*. Даны два файла, в каждом из которых находится запись многочлена. Найдите сумму данных многочленов.
+# # 1. 5x^2 + 3x  2. 3x^2 + x + 8 Результат: 8x^2 + 4x + 8
 
 
-from sympy import Symbol, collect
-
-s1="5*x**2 + 3*x"
-s2='3*x**2 + x + 8'
-
-x=Symbol('x')
-s3= collect(s1 + '+' + s2, x)
-print(s3)
+# # Эту задачу своей головой не осилил. Нашел в инернете, что можно через бибилиотеку решить
 
 
-# Решение Дениса
-# Для многочленов с отрицательными коэффициентами:
+# from sympy import Symbol, collect
 
-n = '3x^2-x-8'
-n = n.replace('-', '+-') # Меняем все символы - на +-, чтобы получить отрицательные коэффициенты(показано во втором принте, после сплита по плюсу)
-print(n)
-n = n.split('+')
-print(n)
+# s1="5*x**2 + 3*x"
+# s2='3*x**2 + x + 8'
 
-# Дальше проверять коэффициенты по степени икса(можно отталкиваться от наличия знака ^)
+# x=Symbol('x')
+# s3= collect(s1 + '+' + s2, x)
+# print(s3)
+
+
+# # Решение Дениса
+# # Для многочленов с отрицательными коэффициентами:
+
+# n = '3x^2-x-8'
+# n = n.replace('-', '+-') # Меняем все символы - на +-, чтобы получить отрицательные коэффициенты(показано во втором принте, после сплита по плюсу)
+# print(n)
+# n = n.split('+')
+# print(n)
+
+# # Дальше проверять коэффициенты по степени икса(можно отталкиваться от наличия знака ^)
