@@ -1,0 +1,7 @@
+
+            Методы, используемые в разных модулях калькулятора
+
+    main            controller          view              model
+
+startProgram          start           createMenu         newYear
+                                      printResult
